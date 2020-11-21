@@ -1,0 +1,98 @@
+@import "../../../assets/styles/generics.scss";
+
+.c-courses-list {
+  .col-3 {
+    text-align: left;
+  }
+
+  .card {
+    border-radius: 6px;
+    border: none;
+    background: $white;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.18);
+    margin-bottom: 5px;
+  }
+  .table-header {
+    font-family: "Lato";
+    color: $grey-medium;
+    font-weight: $font-bold;
+  }
+  .card-header {
+    font-size: 14px;
+    font-family: "Lato";
+    color: $black;
+    font-weight: $font-bold;
+    border: none;
+    background: $white;
+    border-radius: 6px;
+    padding: 20px 1.25rem;
+  }
+  .card-body {
+    color: $grey-medium;
+  }
+}
+
+.btn-collapse {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+// .btn-search:focus,
+// .btn-search:hover {
+//   box-shadow: 0 0 6px 1px rgb(136 73 216);
+//   transition: 0.4s;
+// }
+
+.input-search {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.18);
+}
+
+.btn-search {
+  background: linear-gradient(
+    280deg,
+    rgba(150, 81, 233, 1) 70%,
+    rgba(136, 73, 216, 1) 90%
+  );
+  color: $white;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  font-weight: $font-bold;
+  padding: 7px 32px;
+  box-shadow: 0px 8px 15px rgb(0 0 0 / 18%);
+  transition: all 0.3s ease 0s;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 8px 16px;
+
+  i {
+    display: flex;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 6px 1px rgb(136 73 216);
+    transition: 0.4s;
+  }
+
+  &:focus {
+    box-shadow: 0 0 6px 1px rgb(136 73 216);
+    transition: 0.4s;
+  }
+}
+
+.btn-down {
+  i {
+    display: flex;
+  }
+}

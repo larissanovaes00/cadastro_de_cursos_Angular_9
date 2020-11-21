@@ -1,24 +1,52 @@
 /*********************** COLORS ****************************/
 
-$purple: #904de1;
+$purple: #9651e9;
 $grey-pale: #f2f2f2;
 $black: #3a3a3a;
 $white: #ffffff;
+$grey-medium: #6c757d;
+$purple-light: #d9d2e1;
+
+$font-regular: 400;
+$font-bold: 700;
+$font-black: 900;
 
 body {
   font-family: "Lato", sans-serif;
+  background: linear-gradient(
+    280deg,
+    rgb(217 210 225 / 50%) 10%,
+    rgba(242, 242, 242, 1) 50%
+  );
 }
 
+/***************** TITLES AND PARAGRAPHS *********************/
 .title-1 {
-  font-weight: 900;
-  font-size: 48px;
+  font-weight: $font-black;
+  font-size: 36px;
   line-height: 1.39;
 }
 
+.label-small {
+  color: $purple;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: $font-black;
+  font-family: "Lato";
+}
+
+.paragraph {
+  font-size: 16px;
+  color: $grey-medium;
+  font-weight: $font-regular;
+}
+
+/***************** FORMS / INPUTS *********************/
 .c-form {
-  background-color: $grey-pale;
   padding: 48px;
   border-radius: 40px;
+  box-shadow: 0 0 40px -10px grey;
 }
 
 label {
@@ -30,31 +58,48 @@ label {
 
 input {
   height: 40px;
-  border: none;
-  border-radius: 8px;
   padding: 0 16px;
+}
+
+input,
+textarea {
+  border: none;
+  border-radius: 6px;
   color: $black;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: 0;
-  box-shadow: 0 0 3px 0px #9651e9b8;
+  border: solid 1px $purple;
   transition: 0.4s;
+}
+
+textarea {
+  height: 150px;
+  padding: 8px 16px;
+}
+
+/***************** BUTTON *********************/
+.btn:focus {
+  box-shadow: none;
+  outline: none;
 }
 
 .btn-purple {
   background: linear-gradient(
     280deg,
-    rgba(144, 77, 225, 1) 70%,
-    rgba(144, 77, 210, 1) 90%
+    rgba(150, 81, 233, 1) 70%,
+    rgba(136, 73, 216, 1) 90%
   );
   color: $white;
   font-size: 16px;
-  letter-spacing: 1px;
-  font-weight: 700;
+  letter-spacing: 0.8px;
+  font-weight: $font-bold;
   padding: 7px 32px;
   box-shadow: 0px 8px 15px rgb(0 0 0 / 18%);
   transition: all 0.3s ease 0s;
+  border-radius: 6px;
 }
 
 .btn-purple:hover,
@@ -62,7 +107,22 @@ input:focus {
   outline: 0;
   box-shadow: 0px 0px 10px 2px #2125295c;
   color: $white;
-  font-weight: 700;
+  font-weight: $font-bold;
   box-shadow: 0px 8px 20px rgb(144 77 225 / 62%);
   transform: translateY(-4px);
+}
+
+.m-120 {
+  &.top {
+    margin-top: 120px;
+  }
+  &.bottom {
+    margin-bottom: 120px;
+  }
+  &.right {
+    margin-right: 120px;
+  }
+  &.left {
+    margin-left: 120px;
+  }
 }
