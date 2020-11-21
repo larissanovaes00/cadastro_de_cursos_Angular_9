@@ -38,7 +38,11 @@
     <div class="col-12 mt-3">
       <button type="submit" class="btn btn-purple" [disabled]="!f.valid">Salvar</button>
     </div>
+    <div class="col-12 mt-4 alert alert-success alert-dismissible fade show" role="alert" *ngIf="formSubmitted">
+      <p class="label-small mb-0">Curso salvo com sucesso!</p>
+    </div>
   </form>
 </div>
+
 
 <router-outlet></router-outlet>

@@ -5,7 +5,7 @@
       Insira o nome do curso
     </label>
     <div class="d-flex">
-      <input type="search" id="search" class="w-100 input-search">
+      <input type="search" id="search" class="w-100 input-search" [(ngModel)]="searchCourse">
       <button class="btn btn-search">
         <i>
           <img src="../assets/img/loupe.svg" alt="Pesquisar">
@@ -13,7 +13,6 @@
       </button>
     </div>
   </div>
-
   <div class="d-flex mb-3 table-header">
     <div class="col-3">
       Curso
@@ -35,124 +34,55 @@
     <div class="col-3">Conclusão</div>
   </div>
 
-  <div id="accordion">
+
+  <div id="accordion" *ngFor="let curso of cursos | filterCourse: searchCourse; index as i">
     <div class="card">
-      <div class="card-header" id="headingTwo">
+      <div class="card-header" id="headingOne-{{i}}">
         <div class="row">
           <div class="col-3">
-            Curso XPTO
+            {{ curso.name }}
           </div>
           <div class="col-3">
-            2 semanas
+            {{ curso.duration }}
           </div>
           <div class="col-3">
-            05/01/1987
+            <div *ngIf="curso.start; else nodate">
+              {{ curso.start | date: 'dd/MM/yyyy'}}
+            </div>
+            <ng-template #nodate>
+              <p class="info-empty">Data não definida</p>
+            </ng-template>
           </div>
           <div class="col-3">
-            30/01/1987
+            <div *ngIf="curso.end; else noDateEnd">
+              {{ curso.end | date: 'dd/MM/yyyy'}}
+            </div>
+            <ng-template #noDateEnd>
+              <p class="info-empty">Data não definida</p>
+            </ng-template>
           </div>
-          <button class="btn btn-collapse" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" title="Saber mais">
+         
+          <button class="btn btn-collapse" data-toggle="collapse" attr.data-target="#collapseOne-{{i}}" aria-expanded="true" attr.aria-controls="collapseOne-{{i}}" title="Saber mais">
             <i>
               <img src="../assets/img/arrow-down.svg" alt="Ver mais">
             </i>
           </button>
         </div>
       </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div id="collapseOne-{{i}}" class="collapse" attr.aria-labelledby="headingOne-{{i}}" data-parent="#accordion">
         <div class="card-body">
-          <p class="label-small">Saiba mais sobre o curso</p>
-          <p class="paragraph">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-            Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
-            probably haven't heard of them accusamus labore sustainable VHS.
-          <p>
+          <div *ngIf="curso.description; else nodescription">
+            <p class="label-small">Saiba mais sobre o curso</p>
+            <p class="paragraph">
+              {{ curso.description }}
+            <p>
+          </div>
+          <ng-template #nodescription>
+            <p class="label-small">Informações em breve</p>
+          </ng-template>
         </div>
       </div>
     </div>
   </div>
-  <div id="accordion">
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <div class="row">
-          <div class="col-3">
-            Curso XPTO
-          </div>
-          <div class="col-3">
-            2 semanas
-          </div>
-          <div class="col-3">
-            05/01/1987
-          </div>
-          <div class="col-3">
-            30/01/1987
-          </div>
-          <button class="btn btn-collapse" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" title="Saber mais">
-            <i>
-              <img src="../assets/img/arrow-down.svg" alt="Ver mais">
-            </i>
-          </button>
-        </div>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-        <div class="card-body">
-          <p class="label-small">Saiba mais sobre o curso</p>
-          <p class="paragraph">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-            Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
-            probably haven't heard of them accusamus labore sustainable VHS.
-          <p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="accordion">
-    <div class="card">
-      <div class="card-header" id="headingFour">
-        <div class="row">
-          <div class="col-3">
-            Curso XPTO
-          </div>
-          <div class="col-3">
-            2 semanas
-          </div>
-          <div class="col-3">
-            05/01/1987
-          </div>
-          <div class="col-3">
-            30/01/1987
-          </div>
-          <button class="btn btn-collapse" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne" title="Saber mais">
-            <i>
-              <img src="../assets/img/arrow-down.svg" alt="Ver mais">
-            </i>
-          </button>
-        </div>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-        <div class="card-body">
-          <p class="label-small">Saiba mais sobre o curso</p>
-          <p class="paragraph">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard
-            dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon
-            tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson
-            cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-            Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
-            probably haven't heard of them accusamus labore sustainable VHS.
-          <p>
-        </div>
-      </div>
-    </div>
-  </div>
+
 </div>
