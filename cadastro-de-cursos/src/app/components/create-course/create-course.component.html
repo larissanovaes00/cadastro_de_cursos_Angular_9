@@ -1,39 +1,44 @@
 <div class="col-8 offset-2 c-form mb-5 mt-5">
   <h1 class="title-1 mb-5">Cadastre seu curso!</h1>
-  <form class="row">
+  <form class="row" #f="ngForm" (ngSubmit)="onSubmit(f)">
     <div class="col-6 mb-4">
-      <label for="name">
+      <label for="name" [class.label-error]="!name.valid && name.touched" [ngClass]="fieldErrorStyle(name)">
+        <span class="required-field">*</span>
         Nome do curso
       </label>
-      <input type="text" id="name" class="w-100">
+      <input type="text" id="name" class="w-100" ngModel name="name" required #name="ngModel">
+      <p class="label-error" *ngIf="!name.valid && name.touched">O campo nome do curso é obrigatório.</p>
     </div>
     <div class="col-6 mb-4">
-      <label for="semanas">
+      <label for="semanas" [class.label-error]="!duration.valid && duration.touched">
+        <span class="required-field">*</span>
         Duração em semanas
       </label>
-      <input type="date" id="semanas" class="w-100">
+      <input type="number" id="semanas" class="w-100" ngModel name="duration" required #duration="ngModel">
+      <p class="label-error" *ngIf="!duration.valid && duration.touched">O campo duração é obrigatório.</p>
     </div>
     <div class="col-6 mb-4">
       <label for="inicio">
         Data de início
       </label>
-      <input type="date" id="inicio" class="w-100">
+      <input type="date" id="inicio" class="w-100" ngModel name="start">
     </div>
     <div class="col-6 mb-4">
       <label for="conclusao">
         Data de conclusão
       </label>
-      <input type="date" id="conclusao" class="w-100">
+      <input type="date" id="conclusao" class="w-100" ngModel name="end">
     </div>
-
     <div class="col-12">
       <label for="descricao">
         Descrição
       </label>
-      <textarea type="date" id="descricao" class="w-100"></textarea>
+      <textarea type="date" id="descricao" class="w-100" ngModel name="description"></textarea>
     </div>
     <div class="col-12 mt-3">
-      <button class="btn btn-purple">Salvar</button>
+      <button type="submit" class="btn btn-purple" [disabled]="!f.valid">Salvar</button>
     </div>
   </form>
 </div>
+
+<router-outlet></router-outlet>

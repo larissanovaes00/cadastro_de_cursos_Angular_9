@@ -36,6 +36,24 @@ body {
   font-family: "Lato";
 }
 
+.label-error {
+  font-weight: $font-bold;
+  letter-spacing: 0;
+  font-size: 12px;
+  margin-top: 5px;
+  color: $purple;
+}
+
+.required-field {
+  font-size: 20px;
+  line-height: 1px;
+  position: relative;
+  top: 8px;
+  color: $purple;
+  font-weight: $font-black;
+  margin-right: 3px;
+}
+
 .paragraph {
   font-size: 16px;
   color: $grey-medium;
@@ -71,8 +89,9 @@ textarea {
 input:focus,
 textarea:focus {
   outline: 0;
-  border: solid 1px $purple;
+  // border: solid 1px $grey-medium;
   transition: 0.4s;
+  box-shadow: 0 2px 2px rgba(10, 16, 20, 0.24), 0 0 2px rgba(10, 16, 20, 0.12);
 }
 
 textarea {

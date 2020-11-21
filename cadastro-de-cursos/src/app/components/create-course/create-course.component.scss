@@ -1,0 +1,5 @@
+@import "../../../assets/styles/generics.scss";
+
+.ng-invalid.ng-touched:not(form) {
+  border: solid 1px $purple;
+}
