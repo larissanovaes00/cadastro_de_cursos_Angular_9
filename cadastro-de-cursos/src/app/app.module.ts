@@ -9,6 +9,7 @@ import { CreateCourseComponent } from './components/create-course/create-course.
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
+import { FormReativoComponent } from './components/form-reativo/form-reativo.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     CoursesListComponent,
     CreateCourseComponent,
     HomeComponent,
-    FilterPipe
+    FilterPipe,
+    FormReativoComponent
   ],
   imports: [
     BrowserModule,

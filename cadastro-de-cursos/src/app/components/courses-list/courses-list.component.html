@@ -16,7 +16,7 @@
   <div class="d-flex mb-3 table-header">
     <div class="col-3">
       Curso
-      <button class="btn btn-down">
+      <button class="btn btn-down" (click)="orderByCourseName()">
         <i>
           <img src="../assets/img/sort-by-name.svg" alt="Ordenar" title="Ordenar">
         </i>
@@ -24,7 +24,7 @@
     </div>
     <div class="col-3">
       Duração
-      <button class="btn btn-down">
+      <button class="btn btn-down" (click)="orderByCourseDuration()">
         <i>
           <img src="../assets/img/sort-by-number.svg" alt="Ordenar" title="Ordenar">
         </i>
@@ -40,14 +40,14 @@
       <div class="card-header" id="headingOne-{{i}}">
         <div class="row">
           <div class="col-3">
-            {{ curso.name }}
+            <p class="text-truncate">{{ curso.name }}</p>
           </div>
           <div class="col-3">
-            {{ curso.duration }}
+            <p>{{ curso.duration }}</p>
           </div>
           <div class="col-3">
             <div *ngIf="curso.start; else nodate">
-              {{ curso.start | date: 'dd/MM/yyyy'}}
+              <p>{{ curso.start | date: 'dd/MM/yyyy'}}</p>
             </div>
             <ng-template #nodate>
               <p class="info-empty">Data não definida</p>
@@ -55,7 +55,7 @@
           </div>
           <div class="col-3">
             <div *ngIf="curso.end; else noDateEnd">
-              {{ curso.end | date: 'dd/MM/yyyy'}}
+              <p>{{ curso.end | date: 'dd/MM/yyyy'}}</p>
             </div>
             <ng-template #noDateEnd>
               <p class="info-empty">Data não definida</p>

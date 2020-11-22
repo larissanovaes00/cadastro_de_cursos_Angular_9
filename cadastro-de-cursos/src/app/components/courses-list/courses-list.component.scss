@@ -20,12 +20,18 @@
   .card-header {
     font-size: 14px;
     font-family: "Lato";
-    color: $black;
+    color: #545b62;
     font-weight: $font-bold;
     border: none;
     background: $white;
     border-radius: 6px;
     padding: 20px 1.25rem;
+    margin-bottom: 0px;
+    text-transform: capitalize;
+
+    p{
+      margin-bottom: 0px;
+    }
   }
   .card-body {
     color: $grey-medium;
@@ -38,18 +44,13 @@
   top: 10px;
 }
 
-// .btn-search:focus,
-// .btn-search:hover {
-//   box-shadow: 0 0 6px 1px rgb(136 73 216);
-//   transition: 0.4s;
-// }
-
 .input-search {
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   border-top-left-radius: 6px;
   border-bottom-left-radius: 6px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.18);
+  height: 50px;
 }
 
 .btn-search {
@@ -99,7 +100,9 @@
 
 .info-empty{
   font-size: 12px;
-    color: $grey-medium;
-    font-weight: 700;
-    max-width: 70px;
+  color: #6c757dd1;
+  font-weight: 700;
+  max-width: 70px;
+  margin-bottom: 0;
+  line-height: 1;
 }
