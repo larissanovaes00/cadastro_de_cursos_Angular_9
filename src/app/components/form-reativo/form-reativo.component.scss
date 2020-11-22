@@ -3,3 +3,49 @@
 .ng-invalid.ng-touched:not(form) {
   border: solid 1px $purple;
 }
+
+
+.alert-success {
+  background-color: $grey-pale;
+  border: none;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 100px 100px rgba(0, 0, 0, 0.18);
+  padding: 48px;
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  margin-top: -250px;
+  margin-left: -250px;
+  transition: 0.4s;
+
+  @media(max-width: 575px){
+    width: 300px;
+    height: 350px;
+    margin-top: -180px;
+    margin-left: -150px;
+  }
+
+  h3 {
+    text-align: center;
+    width: 100%;
+    color: $black;
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .close:focus {
+    outline: none;
+  }
+
+  img {
+    max-width: 100%;
+    width: 450px;
+    display: block;
+    margin: 0 auto;
+  }
+}

@@ -1,15 +1,15 @@
-<div class="col-8 offset-2 c-form mb-5 mt-3">
+<div class="col-12 col-md-8 offset-md-2 c-form mb-5 mt-5">
   <h1 class="title-1 mb-5">Cadastre seu curso!</h1>
-  <form class="row" [formGroup]="form" (ngSubmit)="onSubmit(form)">
-    <div class="col-6 mb-4" >
+  <form class="row mb-5" [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div class="col-12 col-md-6 mb-4" >
       <label for="name" [ngClass]="errorStyle('name')">
         <span class="required-field">*</span>
         Nome do curso
       </label>
       <input type="text" id="name" class="w-100" formControlName="name" [ngClass]="errorStyle('name')">
-      <p *ngIf="form.get('name').invalid && form.get('name').touched" class="label-error">O campo nome do curso é obrigatório.</p>
+      <p *ngIf="form.get('name').invalid && form.get('name').touched" class="label-error">Por favor, insira um nome válido.</p>
     </div>
-    <div class="col-6 mb-4">
+    <div class="col-12 col-md-6 mb-4">
       <label for="weeks" [ngClass]="errorStyle('duration')">
         <span class="required-field">*</span>
         Duração em semanas
@@ -17,13 +17,13 @@
       <input type="number" id="weeks" min="0" class="w-100" formControlName="duration" [ngClass]="errorStyle('duration')">
       <p *ngIf="form.get('duration').invalid && form.get('duration').touched" class="label-error">O campo duração é obrigatório.</p>
     </div>
-    <div class="col-6 mb-4">
+    <div class="col-12 col-md-6 mb-4">
       <label for="inicio">
         Data de início
       </label>
       <input type="date" id="inicio" class="w-100" formControlName="start">
     </div>
-    <div class="col-6 mb-4">
+    <div class="col-12 col-md-6 mb-4">
       <label for="conclusao">
         Data de conclusão
       </label>
@@ -38,9 +38,12 @@
     </div>
     <div class="col-12 mt-3">
       <button type="submit" class="btn btn-purple" [disabled]="form.invalid">Salvar</button>
-    </div>
-    <div *ngIf="formSubmitted" class="col-12 mt-4 alert alert-success alert-dismissible fade show" role="alert">
-      <p class="label-small mb-0">Curso salvo com sucesso!</p>
+      <!-- Alert Success -->
+      <div *ngIf="formSubmitted" class="col-12 lert alert-success alert-dismissible fade show" role="alert">
+        <h3 class="title-1">Curso salvo com sucesso!</h3>
+        <p class="paragraph text-center mb-5 w-100">Redirecionando para home...<p>
+        <img src="../../../assets/img/undraw_fireworks.svg" alt="">
+      </div>
     </div>
   </form>
 </div>

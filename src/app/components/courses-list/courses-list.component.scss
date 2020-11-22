@@ -1,8 +1,15 @@
 @import "../../../assets/styles/generics.scss";
 
 .c-courses-list {
-  .col-3 {
+  .col-md-3 {
     text-align: left;
+    flex-wrap: nowrap;
+    display: flex;
+  }
+  .col-4 {
+    text-align: left;
+    flex-wrap: nowrap;
+    display: flex;
   }
 
   .card {
@@ -28,6 +35,7 @@
     padding: 20px 1.25rem;
     margin-bottom: 0px;
     text-transform: capitalize;
+    height: 64px;
 
     p{
       margin-bottom: 0px;
@@ -105,4 +113,17 @@
   max-width: 70px;
   margin-bottom: 0;
   line-height: 1;
+}
+
+
+.no-courses img{
+  margin: 20px auto;
+  width: 800px;
+  height: 500px;
+  max-width: 100%;
+
+  @media(max-width: 575px){
+    max-width: 100%;
+    height: auto;
+  }
 }

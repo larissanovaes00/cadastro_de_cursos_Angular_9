@@ -25,6 +25,10 @@ body {
   font-weight: $font-black;
   font-size: 36px;
   line-height: 1.39;
+
+  @media (max-width: 575px) {
+    font-size: 24px;
+  }
 }
 
 .label-small {
@@ -62,7 +66,9 @@ body {
 
 /***************** FORMS / INPUTS *********************/
 .c-form {
-  padding: 48px;
+  // @media(max-width: 575px){
+  //   padding: 16px;
+  // }
 }
 
 label {
@@ -117,6 +123,11 @@ textarea {
   box-shadow: 0px 8px 15px rgb(0 0 0 / 18%);
   transition: all 0.3s ease 0s;
   border-radius: 6px;
+
+  @media (max-width: 575px) {
+    padding: 8px 10px;
+    width: 100%;
+  }
 }
 
 .btn-purple:hover,
@@ -144,15 +155,3 @@ textarea {
   }
 }
 
-
-.alert-success {
-  color: #155724;
-  background-color: #d4edda;
-  border-color: #c3e6cb;
-  border-radius: 6px;
-  border: none;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 8px 15px rgb(0 0 0 / 18%);
-}

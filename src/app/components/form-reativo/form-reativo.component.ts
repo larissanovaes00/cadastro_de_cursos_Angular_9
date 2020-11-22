@@ -19,14 +19,16 @@ export class FormReativoComponent implements OnInit {
  
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      name: ['', Validators.required],
-      duration: ['', Validators.required],
+      duration: ['', Validators.required], 
+      name: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
       start:[null],
       end: [null],
       description: [null]
     });
   }
 
+
+  // pattern="[a-zA-Z ]*"
   validateForm(field){
    return this.form.get(field).invalid && this.form.get(field).touched;
   }
@@ -38,13 +40,12 @@ export class FormReativoComponent implements OnInit {
   }
 
   onSubmit(form){
-    console.log(this.form);
     this.validateDate(form)
     this.cursos = JSON.parse(localStorage.getItem('curso'));
     if (!this.cursos && this.isValidDate) {
       localStorage.setItem(
         'curso',
-        JSON.stringify([...this.cursos, form.value])
+        JSON.stringify([form.value])
       );
       this.redirect();
     } else if(this.cursos && this.isValidDate){
@@ -58,7 +59,7 @@ export class FormReativoComponent implements OnInit {
   redirect() {
     setTimeout(() => {
       this.route.navigate(['/']);
-    }, 2000);
+    }, 2500);
   }
 
   validateDate(form) {

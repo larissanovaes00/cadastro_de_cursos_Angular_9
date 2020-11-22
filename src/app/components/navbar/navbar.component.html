@@ -1,13 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light">
-  <div class="col-8 offset-2 d-flex justify-content-between">
+  <div class="col-12 col-md-8 offset-md-2 d-flex justify-content-between">
     <a class="navbar-brand" routerLink="" title="Página inicial">
       Home
     </a>
-   
-    
-      
-        <button class="btn btn-purple" routerLink="/novo-curso">Adicionar novo curso</button>
-     
-    
+    <button class="btn btn-purple" routerLink="/novo-curso" *ngIf="!route.url.includes('novo-curso')">Adicionar novo curso</button>
   </div>
 </nav>
